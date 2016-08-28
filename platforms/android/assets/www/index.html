@@ -19,7 +19,7 @@
 
     function loadApp() {
 
-        var popup = window.open('http://test.yxz.com', '_blank', 'location=no,closebuttoncaption=back');
+        var popup = window.open('http://m.facebook.com', '_blank', 'location=no,toolbar=no,closebuttoncaption=back');
         navigator.notification.activityStart("Please Wait", "loading.....");
         popup.addEventListener("loadstop", function() {
             navigator.notification.activityStop();
