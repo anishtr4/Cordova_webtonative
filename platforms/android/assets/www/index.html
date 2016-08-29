@@ -15,15 +15,22 @@
         } else {
             loadApp()
         }
+        document.addEventListener("backbutton", function(e) {
+            e.preventDefault();
+            navigator.app.exitApp();
+        }, false);
     }
 
     function loadApp() {
 
-        var popup = window.open('http://m.facebook.com', '_blank', 'location=no,toolbar=no,closebuttoncaption=back');
+        var popup = window.open('http://test.yxz.com', '_blank', 'location=no,toolbar=no,closebuttoncaption=back');
         navigator.notification.activityStart("Please Wait", "loading.....");
         popup.addEventListener("loadstop", function() {
             navigator.notification.activityStop();
 
+        });
+        popup.addEventListener('loaderror', function(event) {
+            window.open('server.html', '_blank', 'location=no,toolbar=no,closebuttoncaption=back');
         });
     }
 
